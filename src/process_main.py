@@ -1,6 +1,35 @@
-from text_import import get_docx_text
+from text_import import intermediate_file
+import os
+import json
+import shutil
+import argparse
 
-# Configurations
+
+def check_existance(any_path):
+    """Check if directory or file exists."""
+    # Return a boolean value
+    return os.path.exists(any_path)
+
+
+def tidy_repo(intermediate):
+    """Clear extra temp files and directories before running analysis."""
+    shutil.rmtree(intermediate, ignore_errors=True)
+
 
 if __name__ == "__main__":
-    get_docx_text()
+    # Parser for configrition
+    ap = argparse.ArgumentParser()
+    ap.add_argument(
+        "-c", "--conf", required=True, help="path to the JSON configuration file"
+    )
+    args = vars(ap.parse_args())
+    conf = json.load(open(args["conf"]))
+
+    # Use with caution, the objact will be removed without confirmation.
+    tidy_repo("intermediate")
+    os.mkdir("intermediate")
+
+    # Extract texts from user specified directory to intermediate.
+    if check_existance(conf["dir_path"]):
+        intermediate_file(conf["dir_path"])
+    # get_docx_text("interview_transcribes/AR眼镜座谈会-成都-G1.docx")
