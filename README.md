@@ -28,8 +28,8 @@ want to install by importing the `requirement.txt`, use
 
 ### Running the Tests
 
-Use `pipenv run test` to test the application. The test files are under `music_sug/test/`
-directory. The bash script is `music_sug/scripts/test.sh`.
+Use `pipenv run test` to test the application. The test files are under `test/`
+directory. The bash script is `scripts/test.sh`.
 
 ### Deployment
 
