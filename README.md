@@ -12,9 +12,9 @@ experience in products.
       - [Dependency Installation](#dependency-installation)
       - [Interview Document Format](#interview-document-format)
     + [Running the Tests](#running-the-tests)
-    + [Deployment](#deployment)
-      - [Parameters](#parameters)
-    + [Running the Program](#running-the-program)
+  * [Deployment](#deployment)
+    + [Parameters](#parameters)
+  * [Running the Program](#running-the-program)
 - [License](#license)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -62,11 +62,11 @@ Please check out [Parameters](#parameters) for how to set your own tags.
 Use `pipenv run test` to test the application. The test files are under `test/`
 directory. The bash script is `scripts/test.sh`.
 
-### Deployment
+## Deployment
 
 After setting up the system, some modules need to be installed.
 
-#### Parameters
+### Parameters
 
 **1. `"dir_path"`:** Before running the program, you should specify the path of the
 directory that contains text files to be analyzed. The MS-DOC file is the only
@@ -90,7 +90,7 @@ can put multiple marks in square parenthesis. Don't forget to separate them with
 There is no need to identify the answer marks because the complement of the question
 marks are answer mark.
 
-### Running the Program
+## Running the Program
 
 To run the program, use `pipenv run run` to execute `run.sh` from `scripts` directory.
 
