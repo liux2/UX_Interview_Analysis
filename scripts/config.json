@@ -1,3 +1,6 @@
 {
-  "dir_path" : "interview_transcribes/"
+  "dir_path" : "interview_transcribes",
+  "start_tag" : "正文",
+  "end_tag" : "（访谈结束）",
+  "question_mark": ["M"]
 }
