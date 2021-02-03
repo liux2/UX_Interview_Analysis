@@ -92,11 +92,13 @@ marks are answer mark.
 
 ## Running the Program
 
-To run the program, use `pipenv run run` to execute `run.sh` from `scripts` directory.
-
-If prompted
+To run the program, use `pipenv run run` to execute `run.sh` from `scripts`
+directory. If prompted
 `Error: the command ./scripts/run.sh (from run) could not be found within PATH.`,
  you should use `chmod +x run.sh` to make the file executable.
+
+ Note that the transcribe used are in Chinese, so the punctuation used in the
+ process are mostly halfwidth.
 
 # License
 
