@@ -98,7 +98,7 @@ directory. If prompted
  you should use `chmod +x run.sh` to make the file executable.
 
  Note that the transcribe used are in Chinese, so the punctuation used in the
- process are mostly halfwidth.
+ process are mostly fullwidth.
 
 # License
 
