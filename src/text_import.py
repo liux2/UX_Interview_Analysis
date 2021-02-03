@@ -40,4 +40,50 @@ def intermediate_file(dir_path):
         f.write(text_body)
 
 
+def retain_main_body(file_path, start_tag, end_tag, question_mark):
+    """Keeps only the body of the interview."""
+
+    main_text_body = ""
+    start_tag_list = []
+    end_tag_list = []
+
+    # Get the index of start and end positions
+    with open(file_path, "r") as f:
+        for num, line in enumerate(f):
+            if start_tag in line:
+                start_tag_list.append(num)
+            elif end_tag in line:
+                end_tag_list.append(num)
+            else:
+                pass
+
+    # Check for eligibility
+    # TODO: write a function that detects which doc misses the tag
+    if len(start_tag_list) > len(end_tag_list):
+        print("***The file contains more start tag than end tag***")
+        return
+    elif len(start_tag_list) < len(end_tag_list):
+        print("***The file contains more end tag than start tag***")
+        return
+    else:
+        pass
+    # Get ranges, 2D list
+    range_list = zip(start_tag_list, end_tag_list)
+    # 1. texts between main and end.
+    # It's an ugly af chunk of code IK! I will rewrite it if I can!
+    for start, end in range_list:
+        with open(file_path, "r") as f:
+            for num, line in enumerate(f):
+                if num in range(start + 1, end - 1) and (
+                    not line.startswith(tuple(question_mark))
+                ):
+                    try:
+                        main_text_body += line.split("：", 1)[1]
+                    except IndexError:
+                        pass
+
+    with open("intermediate/intermediate_file", "w") as f:
+        f.write(main_text_body)
+
+
 # TODO: Add more file format support when requested.

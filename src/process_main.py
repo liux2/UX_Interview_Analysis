@@ -1,4 +1,4 @@
-from text_import import intermediate_file
+from text_import import intermediate_file, retain_main_body
 import os
 import json
 import shutil
@@ -29,7 +29,14 @@ if __name__ == "__main__":
     tidy_repo("intermediate")
     os.mkdir("intermediate")
 
-    # Extract texts from user specified directory to intermediate.
+    # Extract texts from user-specified directory to intermediate.
     if check_existance(conf["dir_path"]):
         intermediate_file(conf["dir_path"])
-    # get_docx_text("interview_transcribes/AR眼镜座谈会-成都-G1.docx")
+    # Dump everything else except the main body of the interview.
+    retain_main_body(
+        "intermediate/intermediate_file",
+        conf["start_tag"],
+        conf["end_tag"],
+        conf["question_mark"],
+    )
+    # TODO: Pre-process
