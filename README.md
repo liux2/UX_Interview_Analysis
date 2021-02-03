@@ -5,6 +5,11 @@
 This is a tool created to analyze the interview transcribes to improve user
 experience in products.
 
+TO-Do:
+1. Summarization by text-rank.
+2. Term frequency
+3. Keyword extraction
+
 - [UX Interview Analysis](#ux-interview-analysis)
   * [Getting Started](#getting-started)
     + [Prerequisite](#prerequisite)
